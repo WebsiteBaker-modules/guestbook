@@ -1,0 +1,42 @@
+.gb_setting_name {
+	vertical-align: top;
+	text-align: left;
+	width: 200px;
+}
+.gb_setting_value {
+	vertical-align: top;
+	text-align: left;
+	width: 600px;
+}
+
+.gbcomment {
+	font-style: italic;
+	margin-top: 5px;
+}
+
+.gbmodify tr:hover {
+	background-color:#F1F8DD
+}
+
+.modify_settings {
+	margin: 0;
+}
+
+textarea {
+	font-family: monospace;
+	min-height: 30px;
+}
+/* 
+  The definitions below provide the style for the edit CSS button 
+  Required CSS class name: input.mod_moduledirectory_edit_css
+*/
+input.mod_guestbook_edit_css {
+  color: #000;
+  background-color: #F0F0F0;
+  border: 1px solid gray;
+  padding: 2px;
+  margin: 0;
+  margin-left: 740px;
+  margin-bottom: 5px;
+  width: 110px;
+}																										

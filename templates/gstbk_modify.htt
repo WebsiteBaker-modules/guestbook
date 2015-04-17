@@ -1,0 +1,65 @@
+<!-- BEGIN CommentDoc -->
+<!--
+This is a phplib-template for gstbk_modify.php
+______________________________________________________________
+Tags you may add or remove:
+{HIDDEN}  = You may add this tag to hide some config-elements.
+  See comment in modify_settings.htt on how to use {HIDDEN}
+______________________________________________________________
+-->
+<!-- END CommentDoc -->
+<h2>{MODIFY_STRING}</h2>
+<form class="gstbk_modify" action="{MODSAVE_URL}" method="post">
+	<input type="hidden" name="page_id" value="{PAGE_ID_VALUE}" />
+	<input type="hidden" name="section_id" value="{SECTION_ID_VALUE}" />
+	<input type="hidden" name="entry_id" value="{ENTRY_ID_VALUE}" />
+	<input type="hidden" name="date" value="{POSTED_WHEN_VALUE}" />
+	<input type="hidden" name="position" value="{POSITION_VALUE}" />
+	<table class="row_a" width="100%" border="0">
+		<tr>
+			<td width="150px" class="setting_name">{NAME_STRING}:</td>
+			<td width="300px"><input type="text" name="u_name" value="{NAME}" style="width:300px;" /></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="setting_name">{DATE_STRING}:</td>
+			<td>{DATE}</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="setting_name">{IP_STRING}:</td>
+			<td>{IP} {COUNTRY}</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="setting_name">{EMAIL_STRING}:</font></td>
+			<td><input type="text" name="email" value="{EMAIL}" style="width:300px;" /></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="setting_name">{WEBSITE_STRING}:</font></td>
+			<td><input type="text" name="homepage" value="{WEBSITE}" style="width:300px;" /></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="setting_name">{MESSAGE_STRING}:</font></td>
+			<td><textarea {AUTOGROW_CLASS} name="message" cols="34" rows="6" style="width:300px;height:80px">{MESSAGE}</textarea></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="setting_name">{COMMENT_STRING}:</font></td>
+			<td><textarea {AUTOGROW_CLASS} name="comment" cols="34" rows="6" style="width:300px;height:80px">{COMMENT}</textarea></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<center>
+					<input class="button" type="submit" value="{SUBMIT}" />
+					<input class="button" type="button" value="{CANCEL}" onclick="{CANCEL_ONCLICK}" />
+				</center>
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</form>

@@ -1,0 +1,55 @@
+<!-- BEGIN CommentDoc -->
+<!--
+This is a phplib-template for modify.php
+Don't touch the <!-- BEGIN ... and <!-- END ... lines! They define the block to repeat for every guestbook entry. 
+______________________________________________________________
+Tags you may add or remove:
+{HIDDEN}  = You may add this tag to hide some config-elements.
+  See comment in modify_settings.htt on how to use {HIDDEN}
+______________________________________________________________
+-->
+<!-- END CommentDoc -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+	<td align="left" width="100%">
+		<input type="button" value="{SETTINGS_STRING}" onclick="{SETTINGS_ONCLICK}" style="width: 100%;" />
+	</td>
+</tr>
+</table>
+<h2>{HEADING_STRING}</h2>
+<table class="gbmodify" cellpadding="2" cellspacing="0" border="0" width="100%">
+	<!-- BEGIN Message_Row -->
+	<tr class="{CLASS_ROW}" height="20">
+		<td width="20" style="padding-left: 5px;">
+			<a href="{VIEW_LINK}" title="{VIEW_STRING}"><img src="{THEME_URL}/images/view_16.png" border="0" alt="{VIEW_STRING}" /></a>
+		</td>
+		<td width="20" style="padding-left: 5px;">
+				<a href="{MODIFY_LINK}" title="{MODIFY_STRING}"><img src="{THEME_URL}/images/modify_16.png" border="0" alt="{MODIFY_STRING}" /></a>
+		</td>
+		<td>
+			<div class="gbmessage"><a href="{VIEW_LINK}">{MESSAGE}</a></div>
+			<div class="gbcomment">{COMMENT_STRING}: {COMMENT}</div>
+		</td>
+		<td width="130">
+			{DATE_STRING}: {DATE}
+			<div class="ip"><small>{IP_STRING}: {IP}</small> {FLAG}</div>
+		</td>
+		<td width="20" style="padding-left: 5px;">
+			<a href="{APPROVED_LINK}"><img src="{WB_URL}/modules/guestbook/images/{UN}approved.gif" alt="{APPROVED_STRING}" border="0" /></a>
+		</td>
+		<td width="20">
+			<!-- BEGIN Move_Up -->
+			<a href="{MOVEUP_LINK}" title="{MOVEUP_STRING}"><img src="{THEME_URL}/images/up_16.png" border="0" alt="/\" /></a>
+			<!-- END Move_Up -->
+		</td>
+		<td width="20">
+			<!-- BEGIN Move_Down -->
+			<a href="{MOVEDOWN_LINK}" title="{MOVEDOWN_STRING}"><img src="{THEME_URL}/images/down_16.png" border="0" alt="\/" /></a>
+			<!-- END Move_Down -->
+		</td>
+		<td width="20">
+			<a href="javascript: confirm_link('{ASK_STRING}', '{DELETE_LINK}')" title="{DELETE_STRING}"><img src="{THEME_URL}/images/delete_16.png" border="0" alt="{DELETE_STRING}" /></a>
+		</td>
+	</tr>
+	<!-- END Message_Row -->
+</table>

@@ -1,0 +1,149 @@
+<!-- BEGIN CommentDoc -->
+<!--
+This is a phplib-template for modify_settings.php
+______________________________________________________________
+Tags you may add or remove:
+{HIDDEN}  = You may add this tag to hide some config-elements.
+  If you don't want to let users change the layout, just add this tag to the layout-section's <table>-tag:
+  |<table {HIDDEN} class="row_a" cellpadding="2" cellspacing="0" border="0" align="center" width="100%" style="margin-top: 5px;">
+  |	<tr>
+  |		<td colspan="2"><strong>{LAYOUT_STRING}</strong></td>
+  |		...
+  Add this tag to <tr>-tags to hide single config-elements:
+  |<tr {HIDDEN}>
+  |	<td class="gb_setting_name">{ADMIN_EMAIL_STRING}:</td>
+  |	<td class="gb_setting_value"><input type="text" name="setting_email" value="{ADMIN_EMAIL}" size="40">&nbsp;&nbsp;({MAILNOTIFY_STRING})</td>
+  |</tr>
+{EDIT_CSS}            = displays "Edit CSS"-Button (remove this tag if you don't want it)
+______________________________________________________________
+-->
+<!-- END CommentDoc -->
+<h2>{SETTINGS_STRING}</h2>
+{EDIT_CSS}
+<form class="modify_settings" style="margin: 0;" action="{SETTINGS_URL}" method="post">
+<input type="hidden" name="section_id" value="{SECTION_ID_VALUE}">
+<input type="hidden" name="page_id" value="{PAGE_ID_VALUE}">
+<table class="row_a" cellpadding="2" cellspacing="0" border="0" align="center" width="100%">
+	<tr>
+		<td colspan="2"><strong>{MAIN_STRING}</strong></td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{MSG_PER_PAGE_STRING}:</td>
+		<td class="gb_setting_value"><input type="text" name="entries_per_page" value="{MSG_PER_PAGE}" style="width: 30px" /> {UNLIMITED_STRING}</td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{EMAIL_REQ_STRING}:</td>
+		<td class="gb_setting_value"><input type="checkbox" value="1" name="email_required" {EMAIL_REQ_CHECKED} /></td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{SHOW_UNUSED_STRING}:</td>
+		<td class="gb_setting_value"><input type="checkbox" value="1" name="show_unused_fields" {SHOW_UNUSED_CHECKED} /></td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{SHOW_IMAGE_STRING}:</td>
+		<td class="gb_setting_value"><input type="checkbox" value="1" name="image_links" {SHOW_IMAGE_CHECKED} /></td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{SHOW_SMILEYS_STRING}:</td>
+		<td class="gb_setting_value"><input type="checkbox" value="1" name="show_smiley" {SHOW_SMILEYS_CHECKED} /></td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{AUTO_APPROVE_STRING}:</td>
+		<td class="gb_setting_value"><input type="checkbox" value="1" name="auto_approve" {AUTO_APPROVE_CHECKED} /></td>		
+	</tr>
+	<tr >
+		<td class="gb_setting_name">{CAPTCHA_ENABLED_STRING}:</td>
+		<td class="gb_setting_value">
+			<input type="radio" name="use_captcha" id="use_captcha_true" value="1" {CAPTCHA_ON_CHECKED} />
+			<label for="use_captcha_true">{ENABLED_STRING}</label>
+			<input type="radio" name="use_captcha" id="use_captcha_false" value="0" {CAPTCHA_OFF_CHECKED} />
+			<label for="use_captcha_false">{DISABLED_STRING}</label>
+		</td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{ORDERING_STRING}:</td>
+		<td class="gb_setting_value">
+			<select name="ordering" style="width: 200px">
+			<option value="0" {ASC_SELECTED}>{ASCENDING_STRING}</option>
+			<option value="1" {DESC_SELECTED}>{DESCENDING_STRING}</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{ADMIN_EMAIL_STRING}:</td>
+		<td class="gb_setting_value"><input type="text" name="setting_email" value="{ADMIN_EMAIL}" size="40">&nbsp;&nbsp;({MAILNOTIFY_STRING})</td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{SERVER_VARS_STRING}:</td>
+		<td class="gb_setting_value"><input type="checkbox" value="1" name="store_server_vars" {SERVER_VARS_CHECKED} /></td>
+	</tr>
+	<tr >
+		<td class="gb_setting_name">{FORMAT_FIELD_STRING}:</td>
+		<td class="gb_setting_value">
+			<input type="radio" name="textarea_style" id="textarea_style_0" value="0" {FORMAT_FIELD_0_CHECKED} />
+			<label for="textarea_style_0">textarea</label>
+			<input type="radio" name="textarea_style" id="textarea_style_1" value="1" {FORMAT_FIELD_1_CHECKED} />
+			<label for="textarea_style_1">autogrow</label>
+			<input type="radio" name="textarea_style" id="textarea_style_2" value="2" {FORMAT_FIELD_2_CHECKED} />
+			<label for="textarea_style_2">editarea</label>
+		</td>
+	</tr>
+</table>
+
+<table class="row_a" cellpadding="2" cellspacing="0" border="0" align="center" width="100%" style="margin-top: 5px;">
+	<tr>
+		<td colspan="2"><strong>{LAYOUT_STRING}</strong></td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{DEFAULT_STRING}:</td>
+		<td class="gb_setting_value"><input type="checkbox" value="1" name="use_as_default" {DEFAULT_CHECKED} />{DEFAULT_TEXT}</td>		
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{HEADER_STRING}:</td>
+		<td>
+			<textarea id="header" name="header" cols="85" rows="6" style="width: 98%; height: 120px;">{HEADER}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{LOOP_STRING}:</td>
+		<td>
+			<textarea id="gbk_loop" name="gbk_loop" cols="85" rows="6" style="width: 98%; height: 240px;">{LOOP}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{LOOPB_STRING}:</td>
+		<td>
+			<textarea id="gbk_loop_b" name="gbk_loop_b" cols="85" rows="6" style="width: 98%; height: 240px;">{LOOPB}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{FOOTER_STRING}:</td>
+		<td>
+			<textarea id="footer" name="footer" cols="85" rows="6" style="width: 98%; height: 140px;">{FOOTER}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{NOENTRIES_STRING}:</td>
+		<td>
+			<textarea id="no_entries" name="no_entries" cols="85" rows="6" style="width: 98%; height: 120px;">{NOENTRIES}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td class="gb_setting_name">{ADDENTRY_STRING}:</td>
+		<td>
+			<textarea id="add_entry" name="add_entry" cols="85" rows="6" style="width: 98%; height: 440px;">{ADDENTRY}</textarea>
+		</td>
+	</tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+		<td align="left">
+			<input name="save" type="submit" value="{SAVE_STRING}" style="width: 100px; margin-top: 5px;" />
+		</td>
+		<td align="right">
+			<input type="button" value="{CANCEL_STRING}" onclick="{CANCEL_ONCLICK}" style="width: 100px; margin-top: 5px;" />
+		</td>
+	</tr>
+</table>
+</form>

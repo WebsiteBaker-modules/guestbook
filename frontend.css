@@ -1,0 +1,96 @@
+/* view: odd rows */
+table.gbentry {
+  width: 98%;
+  border: 1px solid #DCDCDC;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+table.gbentry td.gbtitle {
+  font-weight: bold;
+  padding: 0 5px 0 5px;
+  background-color: #FAFAFA;
+  color: #000000;
+	border-bottom: 1px solid #DCDCDC;
+}
+table.gbentry td.gbcontent {
+  padding: 5px; 
+  background-color: #FAFAFA;
+  color: #000000;
+}
+table.gbentry div.gbcomment {
+  font-style: italic;
+  padding: 5px;
+  margin: 15px 5px 0px 5px; 
+  border: 1px dashed #BCBCBC;
+}
+
+/* view: even rows */
+table.gbentry_b {
+  width: 98%;
+  border: 1px solid #DCDCDC;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+table.gbentry_b td.gbtitle {
+  font-weight: bold;
+  padding: 0 5px 0 5px;
+  background-color: #EAEAEA;
+  color: #000000;
+	border-bottom: 1px solid #DCDCDC;
+}
+table.gbentry_b td.gbcontent {
+  padding: 5px; 
+  background-color: #EAEAEA;
+  color: #000000;
+}
+table.gbentry_b div.gbcomment {
+  font-style: italic;
+  padding: 5px;
+  margin: 15px 5px 0px 5px; 
+  border: 1px dashed #BCBCBC;
+}
+
+/* add entry */
+.required {
+  color: #EE0000;
+}
+img.button {
+  vertical-align: bottom;
+}
+.input_form {
+	font-size: 1em;
+	border: 0;
+}
+.input_name_field {
+	width: 300px;
+}
+.input_mail_field {
+	width: 300px;
+}
+.input_website_field {
+	width: 300px;
+}
+.input_message_field {
+	width: 300px;
+	height: 80px;
+}
+.input_smileys {
+	text-align: right;
+}
+.smileys {
+	border: 0;
+}
+.captcha_table {
+	padding-top: 5px;
+}
+.image_captcha {
+	border: 0;
+}
+.captcha_expl {
+	font-size: 0.8em;
+}
+
+/*** Don't remove the class nixhier, this is required for ASP ***/
+.nixhier {
+	display:none;
+}
