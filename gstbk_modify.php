@@ -74,7 +74,7 @@ $query_settings = $database->query("SELECT * FROM `".TABLE_PREFIX."mod_guestbook
 $settings = $query_settings->fetchRow();
 
 // display the guestbook entry
-$query = "SELECT *, INET_NTOA(`ip_addr`) AS `ip_addr` FROM `".TABLE_PREFIX."mod_guestbook` WHERE `page_id` = '$page_id' AND `id` = '$entry_id'";
+$query = "SELECT *, ip_addr AS `ip_addr` FROM `".TABLE_PREFIX."mod_guestbook` WHERE `page_id` = '$page_id' AND `id` = '$entry_id'";
 $query_entry = $database->query($query);
 
 if($query_entry->numRows() > 0) {

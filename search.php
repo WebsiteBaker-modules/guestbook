@@ -57,7 +57,7 @@ function guestbook_search($func_vars) {
 		while($res = $query->fetchRow()) {
 			$mod_vars = array(
 				'page_link' => $func_page_link,
-				'page_link_target' => "&p=".$i++, // jump to guestbook-entry
+				'page_link_target' => "&amp;p=".$i++, // jump to guestbook-entry
 				'page_title' => $func_page_title,
 				'page_description' => $func_page_description,
 				'page_modified_when' => $res['posted_when'],

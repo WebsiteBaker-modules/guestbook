@@ -77,7 +77,7 @@ $t->set_var(array(
 ));
 
 // Loop through existing guestbook entries
-$query_entries = $database->query("SELECT *, INET_NTOA(`ip_addr`) AS `user_ip` FROM `".TABLE_PREFIX."mod_guestbook` WHERE `section_id` = '$section_id' ORDER BY position $order");
+$query_entries = $database->query("SELECT *, `ip_addr` AS `user_ip` FROM `".TABLE_PREFIX."mod_guestbook` WHERE `section_id` = '$section_id' ORDER BY position $order");
 $num_entries = $query_entries->numRows();
 if($num_entries>0) {
 	$row = 'a';

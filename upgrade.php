@@ -220,4 +220,22 @@ if(version_compare($module_version, '2.8.2', '<')) {
 	if($database->is_error()) echo 'Error: '.$database->get_error();
 }
 
+// #######################################################################
+// VERSION < 2.8.71
+if(version_compare($module_version, '2.8.71', '<')) {
+	//convert existing IPs from INET_-format to human readable format and adding new column for IPv6 compatability
+	$database->query("ALTER TABLE `".TABLE_PREFIX."mod_guestbook` CHANGE COLUMN `ip_addr` `ip_addr_old` INT(10) UNSIGNED NOT NULL DEFAULT '0' AFTER `approved`;");
+	if($database->is_error()) echo 'Error: '.$database->get_error();
+	$database->query("ALTER TABLE `".TABLE_PREFIX."mod_guestbook` ADD COLUMN `ip_addr` VARCHAR(50) NOT NULL DEFAULT '0' AFTER `approved`;");
+	if($database->is_error()) echo 'Error: '.$database->get_error();
+	$size_of = $database->query("SELECT COUNT(*) FROM `".TABLE_PREFIX."mod_guestbook`;");
+	if($database->is_error()) echo 'Error: '.$database->get_error();
+	$query_ips = $database->query("SELECT *, INET_NTOA(`ip_addr_old`) AS `ip_addr_old` FROM `".TABLE_PREFIX."mod_guestbook` ORDER BY id ASC");
+	while($result = $query_ips->fetchRow()) {
+		$id = $result['id'];
+		$ip_old = $result['ip_addr_old'];
+		$database->query("UPDATE `".TABLE_PREFIX."mod_guestbook` SET `ip_addr`='$ip_old' WHERE `id`=$id");
+		if($database->is_error()) echo ' Error: '.$database->get_error().'     ';
+	}
+}
 

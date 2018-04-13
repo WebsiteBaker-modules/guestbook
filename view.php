@@ -119,7 +119,7 @@ if($entries_per_page != 0) {
 }
 
 // STEP 2.3.		Display the guestbook entries
-$query_entries = $database->query("SELECT *,INET_NTOA(`ip_addr`) as `user_ip` FROM `".TABLE_PREFIX."mod_guestbook` WHERE `page_id` = '$page_id' AND `section_id` = '$section_id' AND `approved` = '1' ORDER BY position $ordering".$limit_sql);
+$query_entries = $database->query("SELECT *,`ip_addr` as `user_ip` FROM `".TABLE_PREFIX."mod_guestbook` WHERE `page_id` = '$page_id' AND `section_id` = '$section_id' AND `approved` = '1' ORDER BY position $ordering".$limit_sql);
 if($query_entries){
 	$num_entries = $query_entries->numRows();
 } else {

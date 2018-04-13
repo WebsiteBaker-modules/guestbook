@@ -52,7 +52,7 @@ if(file_exists(WB_PATH.'/modules/geoip/phpwhois_functions.php')) {
 }
 
 // display the guestbook entry
-$query = "SELECT *, INET_NTOA(`ip_addr`) AS `user_ip` FROM `".TABLE_PREFIX."mod_guestbook` WHERE `page_id` = '$page_id' AND `section_id` = '$section_id' AND `id` = '$entry_id'";
+$query = "SELECT *, `ip_addr` AS `user_ip` FROM `".TABLE_PREFIX."mod_guestbook` WHERE `page_id` = '$page_id' AND `section_id` = '$section_id' AND `id` = '$entry_id'";
 $query_entry = $database->query($query);
 if($query_entry->numRows() > 0) {
 	$entry = $query_entry->fetchRow();
